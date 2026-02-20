@@ -1,10 +1,13 @@
+
+!pip install streamlit
 import streamlit as st
 from sklearn.datasets import load_iris
 data=load_iris()
 from sklearn.ensemble import RandomForestClassifier
 model=RandomForestClassifier()
 x=data.data
-y=data.targetmodel.fit(x,y)
+y=data.target
+model.fit(x,y)
 st.header("Iris Flower Classification")
 s1=st.number_input("Enter sepal length")
 sw=st.number_input("enter sepal width")
